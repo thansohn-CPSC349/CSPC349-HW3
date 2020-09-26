@@ -1,0 +1,109 @@
+<!-- Copied from https://github.com/mdn/learning-area/blob/master/html/forms/html-form-structure/payment-form.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment form example</title>
+    <link href="stylesheets/payment-form.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+</head>
+
+<body>
+    <form data-payment-order="form">
+        <h1>Payment form</h1>
+        <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+        <section>
+            <h2>Contact information</h2>
+            <fieldset>
+                <legend>Title</legend>
+                <ul>
+                    <li>
+                        <label for="title_1">
+                            <input type="radio" id="title_1" name="title" value="Mr.">
+                            Mr.
+                        </label>
+                    </li>
+                    <li>
+                        <label for="title_2">
+                            <input type="radio" id="title_2" name="title" value="Ms.">
+                            Ms.
+                        </label>
+                    </li>
+                    <li>
+                        <label for="title_3">
+                            <input type="radio" id="title_3" name="title" value="Mrs.">
+                            Mrs.
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+            <p>
+                <label for="name">
+                    <span>Name: </span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="text" id="name" name="username" autofocus required>
+            </p>
+            <p>
+                <label for="mail">
+                    <span>E-mail: </span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="email" id="mail" name="usermail" placeholder="dr@who.com" required>
+            </p>
+            <p>
+                <label for="pwd">
+                    <span>Password: </span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="password" id="pwd" name="password" required>
+            </p>
+        </section>
+        <section>
+            <h2>Payment information</h2>
+            <p>
+                <label for="card">
+                    <span>Card type:</span>
+                </label>
+                <select id="card" name="usercard" required>
+                    <option value="visa">Visa</option>
+                    <option value="mc">Mastercard</option>
+                    <option value="amex">American Express</option>
+                </select>
+            </p>
+            <p>
+                <label for="number">
+                    <span>Card number:</span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="tel" id="number" name="cardnumber" required>
+            </p>
+            <p>
+                <label for="date">
+                    <span>Expiration date:</span>
+                    <strong><abbr title="required">*</abbr></strong>
+                    <em>formatted as mm/dd/yyyy</em>
+                </label>
+                <input type="date" id="date" name="expiration" required>
+            </p>
+        </section>
+        <section>
+            <button type="submit">Validate Information</button>
+        </section>
+    </form>
+
+    <div id="gratitude" class="modal">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="scripts/formhandler.js" , charset="utf-8"></script>
+    <script src="scripts/payment.js" , charset="utf-8"></script>
+</body>
+
+</html>
